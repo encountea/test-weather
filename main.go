@@ -27,7 +27,9 @@ func main() {
 		return
 	}
 
-	city := "Moscow" 
+	var city string
+	fmt.Scan(&city)
+	 
 	url := fmt.Sprintf("https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s", city, config.APIKey)
 
 	resp, err := http.Get(url)
