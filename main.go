@@ -52,5 +52,7 @@ func main() {
 		return
 	}
 
-	fmt.Printf("Текущая температура °C в %s: %.0f°C\n" + "Ощущается как: %.0f°C\n" + "Текущая температура °F в %v: %.0f°F\n" + "Ощущается как: %.0f°F", city, data.Main.Temp-271, data.Main.Feels_like-271, city, float64(((data.Main.Temp-271)*(9/5))) + 32, float64(((data.Main.Feels_like-271)*(9/5))) + 32)
+	fmt.Printf("Текущая температура °C в %s: %.0f°C\n" + "Ощущается как: %.0f°C\n" + "Текущая температура °F в %v: %.0f°F\n" + 
+	"Ощущается как: %.0f°F", city, data.Main.Temp-271, data.Main.Feels_like-271, city, float64(((data.Main.Temp-271)*(9/5))) +
+	32, float64(((data.Main.Feels_like-271)*(9/5))) + 32)
 }
