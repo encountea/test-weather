@@ -52,7 +52,8 @@ func main() {
 		return
 	}
 
-	fmt.Printf("Current temperature °C in %s: %.0f°C\n" + "Feels like: %.0f°C\n" + "Current temperature °F in %v: %.0f°F\n" + 
-	"Feels like: %.0f°F", city, data.Main.Temp-271, data.Main.Feels_like-271, city, float64(((data.Main.Temp-271)*(9/5))) +
-	32, float64(((data.Main.Feels_like-271)*(9/5))) + 32)
+	fmt.Printf("Current temperature °C in %s: %.0f°C\n", city, data.Main.Temp-271)
+	fmt.Printf("Feels like: %.0f°C\n", data.Main.Feels_like-271)
+	fmt.Printf("Current temperature °F in %v: %.0f°F\n", city, float64(((data.Main.Temp-271)*(9/5))) + 32)
+	fmt.Printf("Feels like: %.0f°F", float64(((data.Main.Feels_like-271)*(9/5))) + 32)
 }
