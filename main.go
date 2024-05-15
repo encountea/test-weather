@@ -15,8 +15,8 @@ type Config struct {
 
 type WeatherData struct {
 	Main struct {
-		Temp       float64 `json:"temp"`
-		Feels_like float64 `json:"feels_like"`
+		Temp      float64 `json:"temp"`
+		FeelsLike float64 `json:"feels_like"`
 	} `json:"main"`
 }
 
@@ -29,7 +29,7 @@ func main() {
 
 	var city string
 	fmt.Scan(&city)
-	 
+
 	url := fmt.Sprintf("https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s", city, config.APIKey)
 
 	resp, err := http.Get(url)
@@ -53,7 +53,7 @@ func main() {
 	}
 
 	fmt.Printf("Current temperature °C in %s: %.0f°C\n", city, data.Main.Temp-271)
-	fmt.Printf("Feels like: %.0f°C\n", data.Main.Feels_like-271)
-	fmt.Printf("Current temperature °F in %v: %.0f°F\n", city, float64(((data.Main.Temp-271)*(9/5))) + 32)
-	fmt.Printf("Feels like: %.0f°F", float64(((data.Main.Feels_like-271)*(9/5))) + 32)
+	fmt.Printf("Feels like: %.0f°C\n", data.Main.FeelsLike-271)
+	fmt.Printf("Current temperature °F in %v: %.0f°F\n", city, float64(((data.Main.Temp-271)*(9/5)))+32)
+	fmt.Printf("Feels like: %.0f°F", float64(((data.Main.FeelsLike-271)*(9/5)))+32)
 }
